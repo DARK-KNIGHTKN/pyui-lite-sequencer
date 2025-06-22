@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyui-lite-sequencer"
+version = "0.1.0"
+description = "A lightweight PyQt6 widget library with sequencer demo"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Karthik Naren", email = "karthik27naren@gmail.com"}
+]
+keywords = ["pyqt6", "widgets", "ui", "sequencer", "gui"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Desktop Environment",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "PyQt6>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8", 
+    "mypy",
+    "pre-commit",
+]
+
+[project.urls]
+Homepage = "https://github.com/DARK-KNIGHTKN/pyui-lite-sequencer"
+Repository = "https://github.com/DARK-KNIGHTKN/pyui-lite-sequencer"
+Issues = "https://github.com/DARK-KNIGHTKN/pyui-lite-sequencer/issues"
+
+[project.scripts]
+pyui-demo = "sequencer_demo.app:main"
+
+[tool.setuptools.packages.find]
+include = ["pyui_lite*", "sequencer_demo*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
